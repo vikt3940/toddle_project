@@ -249,10 +249,10 @@ app.get('/api/survey_result', authentication , function (req, res) {
 	res.send({"response":true, "responseString":"Data fetched Successfully","data": survey_result});
 
 });
-app.get('/api/get_users', authentication , function (req, res) {
-	// body...
-	res.send({"response":true, "responseString":"Data fetched Successfully","data": registeruser});
-});
+// app.get('/api/get_users', authentication , function (req, res) {
+// 	// body...
+// 	res.send({"response":true, "responseString":"Data fetched Successfully","data": registeruser});
+// });
 
 app.get('/api/get_survey_question', authentication , function (req, res) {
 	// body...
