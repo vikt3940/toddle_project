@@ -1,6 +1,6 @@
 # toddle_project
 
-Toddle Project 
+Toddle Project - API TASK
 
 Api and Param Information
 
@@ -132,6 +132,28 @@ http://classiq.in:3000/api/create_thumbnail?image_url=https://www.toddleapp.com/
 
 response:
 {"response":true,"responseString":"Thumbnail Created Successfully","thumbnail_url":"classiq.in/resize03497613.png"}
+
+--------------------------------------------------------------------------------------------------------------------------
+Toddle Project - Database TASK - MYSQL Query
+---------------------------------------------------------------------------------------------------------------------------
+IF Higher Preference Table Value is NULL 
+
+SELECT 
+COALESCE(u_prefe.language,o_prefe.language,g_prefe.language) as "language",
+COALESCE(u_prefe.timezone,o_prefe.timezone,g_prefe.timezone) as "timezone",
+COALESCE(u_prefe.darkThemeEnabled,o_prefe.darkThemeEnabled,g_prefe.darkThemeEnabled) as "darkThemeEnabled",
+COALESCE(u_prefe.emailNotificationEnabled,o_prefe.emailNotificationEnabled,g_prefe.emailNotificationEnabled) as "emailNotificationEnabled" 
+FROM u_prefe INNER JOIN o_prefe INNER JOIN g_prefe
+
+
+IF Higher Preference Table Value is Empty 
+
+SELECT 
+COALESCE(NULLIF(u_prefe.language,""),NULLIF(o_prefe.language,""),NULLIF(g_prefe.language,"")) as language ,
+COALESCE(NULLIF(u_prefe.timzone,""),NULLIF(o_prefe.timzone,""),NULLIF(g_prefe.timzone,"")) as timzone ,
+COALESCE(NULLIF(u_prefe.darkThemeEnabled,""),NULLIF(o_prefe.darkThemeEnabled,""),NULLIF(g_prefe.darkThemeEnabled,"")) as darkThemeEnabled ,
+COALESCE(NULLIF(u_prefe.emailNotificationEnabled,""),NULLIF(o_prefe.emailNotificationEnabled,""),NULLIF(g_prefe.emailNotificationEnabled,"")) as emailNotificationEnabled 
+FROM u_prefe INNER JOIN o_prefe INNER JOIN g_prefe
 
 
 
