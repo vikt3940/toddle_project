@@ -274,7 +274,7 @@ app.get('/api/create_thumbnail', function (req,res) {
 	Jimp.read(image_url)
 	  .then(data => {
 	     data.resize(50, 50) // resize
-	     data.write('/var/www/html'+imageName); // save
+	     data.write('/var/www/html/'+imageName); // save
 	     res.send({"response":true,"responseString":"Thumbnail Created Successfully",thumbnail_url:"classiq.in/"+imageName})
 	 })
   	.catch(err => {
