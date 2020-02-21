@@ -1,5 +1,8 @@
 # toddle_project
 
+Updated typo error - on - thumbnail api
+
+
 Toddle Project - API TASK
 --------------------------------------------------------------------------------------------------------------------
 Api and Param Information
